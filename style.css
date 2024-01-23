@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.body{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bg.jpg);
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hiscoreBox{
+    position: absolute;
+    top: 13%;
+    left: 5%;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px #c20000;
+}
+#scoreBox{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px #c20000;
+}
+#gear{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 38px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-shadow: 2px 2px #FF0000;
+}
+#board{
+    background: linear-gradient(rgb(170,236,170),rgb(236,236,167));
+    width: 90vmin;
+    height: 92vmin;
+    border: 7px dashed rgb(251, 96, 0);
+    display: grid;
+    grid-template-rows: repeat(36,1fr);
+    grid-template-columns: repeat(36,1fr);
+}
+.head{
+    background: linear-gradient(rgb(255, 145, 145),rgb(242, 242, 144)) ;
+    border: 1px solid rgb(58, 12, 58);
+    border-radius: 5px;
+    transform: scale(1.02);
+}
+.head::after{
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 30%;
+    left: 17%;
+}
+.head::before{
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 30%;
+    right: 17%;
+}
+.snake{
+    background-color: purple;
+    border: 0.25vmin solid purple;
+    border-radius: 5px;
+}
+.food{
+    background: linear-gradient(red, purple) ;
+    border: 0.25vmin solid black;
+    border-radius: 8px;
+    
+}
+@media screen and (max-width:940px) {
+    #hiscoreBox{
+        left: 2%;
+        font-size: 26px;
+    }
+    #scoreBox{
+        left: 2%;
+        font-size: 26px;
+    }
+    #gear{
+        right: 2%;
+    }
+}
+@media screen and (max-width:860px) {
+    #hiscoreBox{
+        left: 1%;
+        font-size: 20px;
+    }
+    #scoreBox{
+        left: 1%;
+        font-size: 20px;
+    }
+    #gear{
+        right: 1%;
+        font-size: 28px;
+    }
+}
+
+
+
+
+
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 12%;
+    right: 10px;
+    width: 260px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    font-family: 'New Tegomin', serif;
+    color: rgb(226, 226, 226);
+}
+.sub-menu-wrap::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top:4px;
+    left: 65%;
+    transform: rotate(45deg);
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+
+
+
+.sub-menu{
+    background:rgb(0, 0, 0) ;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+
+}
+.user-info{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.user-info h3{
+    font-weight: 800;
+    color: #ffffff;
+    padding-left: 45px;
+    font-size: 28px;
+}
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: rgb(60, 17, 17);
+    margin: 15px 0 10px;
+}
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    margin: 12px 0;
+    font-weight: 800;
+    font-size: 24px;
+    text-align: left;
+}
+.sub-menu-1{
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    margin: 12px 0;
+    font-weight: 800;
+    font-size: 24px;
+    text-align: center;
+}
+.sub-menu-link p{
+    width: 100%;
+}
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s ;
+}
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+}
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+
+.label-type{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.label-type button{
+    border: none;
+    outline: none;
+    padding:  6px 12px;
+    background-color: rgb(109, 109, 109);
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.label-type button:active{
+    background-color: rgb(0, 166, 0);
+}
+
+
+
+.pop-box{
+    width: 65rem;
+    height: 36rem;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background: rgb(19, 19, 19);
+    color: rgb(255, 255, 192);
+    font-family: 'New Tegomin', serif;
+    border-radius: 5px;
+    transition: .3s ease;
+    z-index: 99999;
+}
+.pop-box .box{
+    padding: 10rem ;
+}
+.pop-box .box .fa-times{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.pop-box .box h3{
+    font-size: 35px;
+    text-shadow: 1px 1px crimson;
+}
+.pop-box  hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: rgb(179, 179, 179);
+    margin:10px
+}
+.pop-box .box p{
+    font-size: 24px;
+}
+.pop-box .box p span{
+    color: rgb(34, 201, 0);
+}
+.sub-menu-link button{
+    border: none;
+    outline: none;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'New Tegomin', serif;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.sub-menu-link:last-child p{
+    padding:  3px 12px;
+}
+.sub-menu-link i{
+    color: #fff;
+    font-size: 22px;
+    margin-right:15px ;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+.sub-menu-link i:active{
+    background-color: #00c203;
+
+}

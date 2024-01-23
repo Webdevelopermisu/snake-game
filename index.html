@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snake game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="body">
+        <div id="hiscoreBox">Highscore : 0</div>
+        <div id="scoreBox">Score : 0</div>
+        
+            <i id="gear" class="fa fa-cog" onclick="toggleMenu()"></i>
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <h3>SETTING</h3>
+                    </div>
+                    <hr>
+                        <div class="sub-menu-1">
+                        <p>Label</p>
+                        <div class="label-type">
+    
+                            <button type="button" onclick="easy()">Easy</button>
+                            <button type="button" onclick="mediam()">Mediam</button>
+                            <button type="button" onclick="hard()">Hard</button>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="sub-menu-link">
+                        <p>Sound</p>
+                        <i class="fa fa-volume-up" onclick="playMusic()"></i>
+                        <i class="fa fa-volume-xmark" onclick="puseMusic()"></i>
+                    </div>
+                    
+                    <div class="sub-menu-link" >
+                        <button type="button" onclick="openpopBox()">Instructions</button>
+                        <span>></span>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="pop-box" id="popBox">
+                <div class="box">
+                    <i class="fa fa-times" onclick="closepopBox()"></i>
+                    <h3>Instructions</h3>
+                    <hr>
+                    <p>Use <span>ArrowUp</span> / <span>ArrowDown</span> / <span>ArrowLeft</span> / <span>ArrowRight</span> 
+                    to control the snake. Eat the food without coliding with any obstacles. Pressing enter key or space key after the game is finished will restart the game.
+                    The game is getting more updated day by day depending on your interest.</p>
+                </div>
+            </div>
+
+        
+        <div id="board">
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
